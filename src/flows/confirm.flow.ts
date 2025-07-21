@@ -19,7 +19,7 @@ const generateJsonParse = (info: string) => {
     Contexto: "${info}"
     
     {
-        "name": "Leifer",
+        "name": "Victor",
         "interest": "n/a",
         "value": "0",
         "email": "fef@fef.com",

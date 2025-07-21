@@ -5,13 +5,13 @@ import { format, addMinutes } from 'date-fns'
  * @returns 
  */
 const getCurrentCalendar = async (): Promise<string> => {
-    const dataCalendarApi = await fetch('https://hook.eu2.make.com/yvwkwwxs82vw3o23j7ndtv3luhtvucus')
+    const dataCalendarApi = await fetch('https://hook.us2.make.com/pyhfutekosg7gm49o88d5hrydvebuoye')
     const json: any[] = await dataCalendarApi.json()
     const list = json.reduce((prev, current) => {
         return prev += [
             `Espacio reservado (no disponible): `,
             `Desde ${format(current.date, 'eeee do h:mm a')} `,
-            `Hasta ${format(addMinutes(current.date, 45), 'eeee do h:mm a')} \n`,
+            `Hasta ${format(addMinutes(current.date, 60), 'eeee do h:mm a')} \n`,
         ].join(' ')
     }, '')
     return list
@@ -26,7 +26,7 @@ const appToCalendar = async (text: string) => {
     try {
         const payload = JSON.parse(text)
         console.log(payload)
-        const dataApi = await fetch('https://hook.eu2.make.com/nrbolpvmtt730jgyepvpb4qz3c0145s6', {
+        const dataApi = await fetch('https://hook.us2.make.com/5li5keixtqblxlr9sa6j6ynnffetikbw', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
